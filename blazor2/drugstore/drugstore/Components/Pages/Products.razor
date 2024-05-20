@@ -1,0 +1,92 @@
+﻿@rendermode InteractiveServer
+@page "/Products"
+@using Drugstore.Service
+@using Drugstore.Data
+@inject PharmacyService PharmacyService
+@inject NavigationManager navigation
+
+
+<PageTitle>Карточка товара</PageTitle>
+
+<Layout>
+
+    <h1>Карточка товара</h1>
+
+    <div>
+        <label for="productSelect">Выберите товар:</label>
+        <Select TValue="int" @bind-SelectedValue="selectedProductId" @onchange="OnProductChanged" id="productSelect">
+            <option value="">Выберите товар</option>
+            @foreach (var product in products)
+            {
+                <option value="@product.id">@product.name</option>
+            }
+        </Select>
+    </div>
+
+    <div>
+        <label for="supplierSelect">Выберите поставщика:</label>
+        <Select TValue="int" @bind-SelectedValue="selectedSupplierId" id="supplierSelect">
+            <option value="">Выберите поставщика</option>
+            @foreach (var supplier in suppliers)
+            {
+                <option value="@supplier.id">@supplier.name</option>
+            }
+        </Select>
+    </div>
+
+    @if (selectedProduct != null)
+    {
+        <div id="productInfo">
+            <p><strong>Название:</strong> @selectedProduct.name</p>
+            <p><strong>Цена:</strong> @selectedProduct.cost</p>
+            <p><strong>Количество:</strong> @selectedProduct.quantity</p>
+            <p><strong>Срок годности:</strong> @selectedProduct.expirationdate</p>
+            <p><strong>Массив фасовок:</strong></p>
+            <ul>
+                @foreach (var packing in selectedProduct.packing)
+                {
+                    <li>@packing.packing:</li>
+                }
+            </ul>
+            <p><strong>Поставщики:</strong> @string.Join(", ", selectedProduct.supplierproducts.Select(sp => sp.supplier.name))</p>
+            <button class="btn btn-primary" @onclick="PurchaseFromPreferredSupplier">Заказать у выбранного поставщика</button>
+        </div>
+    }
+
+</Layout>
+
+@code {
+    private List<product> products = new List<product>();
+    private List<supplier> suppliers = new List<supplier>();
+    private product selectedProduct;
+    private int selectedProductId;
+    private int selectedSupplierId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await PharmacyService.GetProductsAsync();
+    }
+
+    private async Task OnProductChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int productId))
+        {
+            selectedProductId = productId;
+            selectedProduct = await PharmacyService.GetProductByIdAsync(productId);
+            if (selectedProduct != null)
+            {
+                suppliers = await PharmacyService.GetSuppliersByProductIdAsync(productId);
+                StateHasChanged();
+            }
+        }
+    }
+
+    private void PurchaseFromPreferredSupplier()
+    {
+        if (selectedProductId > 0 && selectedSupplierId > 0)
+        {
+            navigation.NavigateTo($"/order/{selectedProductId}/{selectedSupplierId}");
+        }
+    }
+}
+

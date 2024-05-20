@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+</head>
+<body>
+    <h1>Оформление заказа</h1>
+    <div id="orderForm">
+        <!-- Форма для оформления заказа -->
+        <label for="productName">Выбранный товар:</label>
+        <input type="text" id="productName" readonly>
+        <br>
+        <label for="supplierName">Поставщик:</label>
+        <input type="text" id="supplierName" readonly>
+        <br>
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" min="1" value="1">
+        <br>
+        <!-- Дополнительные поля для выбора дозировки или других параметров -->
+        <!-- Например: -->
+         <label for="dosage">Дозировка:</label> 
+         <select id="dosage"> 
+            <option value="5mg">5 мг</option> 
+           <option value="10mg">10 мг</option> 
+           <option value="20mg">20 мг</option> 
+        </select> 
+        <br> 
+        <button onclick="submitOrder()">Оформить заказ</button>
+    </div>
+
+    <script>
+        // Загружаем сохраненные значения при загрузке страницы
+        window.onload = function() {
+            let productName = localStorage.getItem('selectedProduct');
+            let supplierName = localStorage.getItem('preferredSupplier');
+            if (productName) {
+                document.getElementById("productName").value = productName;
+            }
+            if (supplierName) {
+                document.getElementById("supplierName").value = supplierName;
+            }
+        };
+
+        function submitOrder() {
+            let productName = document.getElementById("productName").value;
+            let supplierName = document.getElementById("supplierName").value;
+            let quantity = document.getElementById("quantity").value;
+            // Получить другие значения формы при необходимости
+            // Например, дозировку
+             let dosage = document.getElementById("dosage").value;
+
+            // Здесь можно добавить логику для отправки заказа на сервер или другую обработку
+            // Например:
+            alert("Заказ на товар '" + productName + "' у поставщика '" + supplierName + "' в количестве " + quantity + " успешно оформлен.");
+        }
+    </script>
+</body>
+</html>

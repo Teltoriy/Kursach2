@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара</title>
+    <style>
+        .expired {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Карточка товара</h1>
+    <label for="productSelect">Выберите товар:</label>
+    <select id="productSelect" onchange="saveProductInfo()">
+        <option value="product1">Товар 1</option>
+        <option value="product2">Товар 2</option>
+        <option value="product3">Товар 3</option>
+        <!-- Добавьте другие товары по мере необходимости -->
+    </select>
+    <br>
+    <label for="supplierSelect">Выберите поставщика:</label>
+    <select id="supplierSelect" onchange="saveSupplierInfo()">
+        <option value="supplier1">Поставщик 1</option>
+        <option value="supplier2">Поставщик 2</option>
+        <option value="supplier3">Поставщик 3</option>
+        <!-- Добавьте других поставщиков по мере необходимости -->
+    </select>
+    <br>
+    <div id="productInfo">
+        <!-- Здесь будет отображаться информация о товаре -->
+    </div>
+
+    <script>
+        function showProductInfo() {
+            let selectedProduct = document.getElementById("productSelect").value;
+            let productInfoDiv = document.getElementById("productInfo");
+
+            // Здесь можно добавить логику для загрузки информации о выбранном товаре из базы данных или другого источника данных
+            // Например:
+            let productInfo = {
+                name: "Название товара",
+                packaging: ["Фасовка 1", "Фасовка 2"],
+                price: "Цена",
+                suppliers: "Поставщик 1, Поставщик 2, Поставщик 3",
+                quantity: "Количество",
+                expiryDate: "Срок годности",
+                // Добавьте другие сведения о товаре
+                pharmacies: [
+                    "Аптека 1", "Аптека 2" // Пример списка аптек, где есть этот товар
+                ],
+                availableSuppliers: [
+                    { name: "Поставщик 1", quantity: 50, rating: 2 },
+                    { name: "Поставщик 2", quantity: 0, rating: 1 },
+                    { name: "Поставщик 3", quantity: 30, rating: 3 }
+                    // Пример списка поставщиков с рейтингом и количеством товара у каждого
+                ]
+            };
+
+            // Сортируем список поставщиков по убыванию рейтинга
+            productInfo.availableSuppliers.sort((a, b) => b.rating - a.rating);
+
+            // Находим первого поставщика с наличием товара или первого в списке
+            let preferredSupplier = productInfo.availableSuppliers.find(supplier => supplier.quantity > 0) || productInfo.availableSuppliers[0];
+
+            // Отображаем информацию о товаре
+            let productInfoHTML = "<p><strong>Название:</strong> " + productInfo.name + "</p>" +
+                                  "<p><strong>Массив фасовок:</strong> " + productInfo.packaging.join(", ") + "</p>" +
+                                  "<p><strong>Цена:</strong> " + productInfo.price + "</p>" +
+                                  "<p><strong>Поставщики:</strong> " + productInfo.suppliers + "</p>" +
+                                  "<p><strong>Количество:</strong> " + productInfo.quantity + "</p>" +
+                                  "<p><strong>Срок годности:</strong> " + productInfo.expiryDate + "</p>" +
+                                  "<p><strong>Предпочитаемый поставщик:</strong> " + preferredSupplier.name + " (" + preferredSupplier.quantity + " шт.)</p>" +
+                                  "<button onclick='purchaseFromPreferredSupplier()'>Закупить у предпочитаемого поставщика</button>" +
+                                  "<p><strong>Аптеки:</strong> " + productInfo.pharmacies.join(", ") + "</p>" +
+                                  "<p><strong>Доступные поставщики:</strong> " + productInfo.availableSuppliers.map(supplier => supplier.name).join(", ") + "</p>" +
+                                  "<p><strong>Поставщики с наличием:</strong> ";
+            
+            // Показываем поставщиков с наличием товара
+            let suppliersWithStock = productInfo.availableSuppliers.filter(supplier => supplier.quantity > 0);
+            if (suppliersWithStock.length > 0) {
+                productInfoHTML += suppliersWithStock.map(supplier => supplier.name + " (" + supplier.quantity + " шт.)").join(", ");
+            } else {
+                productInfoHTML += "Нет поставщиков с наличием товара";
+            }
+            
+            productInfoHTML += "</p>";
+
+            // Проверяем, просрочен ли товар
+            // В данном примере условие проверки срока годности устанавливается на true для примера
+            let isExpired = true; // Замените на реальную проверку
+
+            // Если товар просрочен, отмечаем его красным цветом
+            if (isExpired) {
+                productInfoHTML = "<div class='expired'>" + productInfoHTML + "</div>";
+            }
+
+            // Выводим информацию о товаре
+            productInfoDiv.innerHTML = productInfoHTML;
+
+            // Сохраняем выбранный товар и предпочтительного поставщика в локальном хранилище
+            localStorage.setItem('selectedProduct', selectedProduct);
+            localStorage.setItem('preferredSupplier', preferredSupplier.name);
+        }
+
+        function saveProductInfo() {
+            let selectedProduct = document.getElementById("productSelect").value;
+            localStorage.setItem('selectedProduct', selectedProduct);
+        }
+
+        function saveSupplierInfo() {
+            let preferredSupplier = document.getElementById("supplierSelect").value;
+            localStorage.setItem('preferredSupplier', preferredSupplier);
+        }
+
+        function purchaseFromPreferredSupplier() {
+            // Здесь можно добавить логику для осуществления закупки у предпочитаемого поставщика
+            // Например:
+            alert("Закупка товара у предпочитаемого поставщика осуществлена успешно.");
+        }
+
+        // Загружаем сохраненные значения при загрузке страницы
+        window.onload = function() {
+            let selectedProduct = localStorage.getItem('selectedProduct');
+            let preferredSupplier = localStorage.getItem('preferredSupplier');
+            if (selectedProduct) {
+                document.getElementById("productSelect").value = selectedProduct;
+                showProductInfo(); // Загружаем информацию о товаре, если выбран
+            }
+            if (preferredSupplier) {
+                document.getElementById("supplierSelect").value = preferredSupplier;
+            }
+        };
+    </script>
+</body>
+</html

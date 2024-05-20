@@ -1,0 +1,82 @@
+﻿@rendermode InteractiveServer
+@page "/order/{ProductId:int}/{SupplierId:int}"
+@using Drugstore.Service
+@using Drugstore.Data
+@inject PharmacyService PharmacyService
+@inject NavigationManager navigation
+
+<PageTitle>Оформление заказа</PageTitle>
+
+<h3>Оформление заказа</h3>
+
+@if (product != null && supplier != null)
+{
+    <div>
+        <h4>Товар: @product.name</h4>
+        <h4>Поставщик: @supplier.name</h4>
+
+        <div>
+            <label for="pharmacySelect">Выберите аптеку:</label>
+            <select id="pharmacySelect" @bind="selectedPharmacyId">
+                <option value="">Выберите аптеку</option>
+                @foreach (var pharmacy in pharmacies)
+                {
+                    <option value="@pharmacy.id">@pharmacy.name</option>
+                }
+            </select>
+        </div>
+
+        <div>
+            <label for="packingSelect">Выберите массовку:</label>
+            <select id="packingSelect" @bind="selectedPackingId">
+                <option value="">Выберите массовку</option>
+                @foreach (var packing in product.packingSupplier)
+                {
+                    <option value="@packing.packing.id">@packing.packing.packing</option>
+                }
+            </select>
+        </div>
+
+        <div>
+            <label for="quantityInput">Введите количество:</label>
+            <input type="number" id="quantityInput" @bind="quantity" min="1" max="@maxQuantity" />
+        </div>
+
+        <button @onclick="AddToPharmacy">Добавить в аптеку</button>-->
+    </div>
+}
+else
+{
+    <p>Загрузка данных...</p>
+}
+@code {
+    [Parameter]
+    public int ProductId { get; set; }
+
+    [Parameter]
+    public int SupplierId { get; set; }
+
+    private product product;
+    private supplier supplier;
+    private List<pharmacy> pharmacies;
+    private List<productpacking> packings;
+    private int selectedPharmacyId;
+    private int selectedPackingId;
+    private int quantity = 1;
+    private int maxQuantity = 100;
+
+        protected override async Task OnInitializedAsync()
+       {
+       product = await PharmacyService.GetProductByIdAsync(ProductId);
+       supplier = await PharmacyService.GetSupplierByIdAsync(SupplierId);
+       pharmacies = await PharmacyService.GetPharmaciesAsync();
+           }
+
+     private async Task AddToPharmacy()
+ {
+     await PharmacyService.AddToPharmacyProductAsync(ProductId, selectedPharmacyId);
+     await PharmacyService.AddToPharmacySuppliersAsync(selectedPharmacyId, SupplierId);
+     await PharmacyService.AddToPharmacyPackingsAsync(ProductId, selectedPackingId, quantity);
+     navigation.NavigateTo("/");
+    }
+}

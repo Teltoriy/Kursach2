@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сведения об аптеке</title>
+</head>
+<body>
+    <h1>Сведения об аптеке</h1>
+    <form id="addProductForm">
+        <label for="pharmacy">Выберите аптеку:</label>
+        <select id="pharmacy" onchange="showPharmacyInfo()">
+            <option value="pharmacy1">Аптека 1</option>
+            <option value="pharmacy2">Аптека 2</option>
+            <option value="pharmacy3">Аптека 3</option>
+            <!-- Добавьте другие аптеки по мере необходимости -->
+        </select>
+        <br>
+        <label for="productName">Название товара:</label>
+        <input type="text" id="productName">
+        <br>
+        <label for="productQuantity">Количество товара:</label>
+        <input type="number" id="productQuantity">
+        <br>
+        <button type="button" onclick="addProduct()">Добавить товар</button>
+    </form>
+    <div id="pharmacyInfo">
+        <!-- Здесь будет отображаться информация о выбранной аптеке -->
+    </div>
+
+    <script>
+        function showPharmacyInfo() {
+            let selectedPharmacy = document.getElementById("pharmacy").value;
+            let pharmacyInfoDiv = document.getElementById("pharmacyInfo");
+            
+            // Здесь можно добавить логику для загрузки информации о выбранной аптеке из базы данных или другого источника данных
+            // Например:
+            let pharmacyInfo = {
+                name: "Название аптеки",
+                date: "Текущая дата",
+                supplier: "Поставщик",
+                // Добавьте другие сведения о выбранной аптеке
+                productQuantities: {
+                    "Товар 1": 5, // Пример количества товара 1
+                    "Товар 2": 10, // Пример количества товара 2
+                    "Товар 3": 3 // Пример количества товара 3
+                }
+            };
+
+            // Генерируем HTML для отображения информации о выбранной аптеке
+            let pharmacyInfoHTML = "<h2>" + pharmacyInfo.name + "</h2>" +
+                                   "<p><strong>Дата:</strong> " + pharmacyInfo.date + "</p>" +
+                                   "<p><strong>Поставщик:</strong> " + pharmacyInfo.supplier + "</p>" +
+                                   "<p><strong>Количество товаров:</strong></p>";
+
+            // Добавляем информацию о количестве каждого товара в аптеке
+            pharmacyInfoHTML += "<ul>";
+            for (const [productName, quantity] of Object.entries(pharmacyInfo.productQuantities)) {
+                pharmacyInfoHTML += "<li>" + productName + ": " + quantity + " <button type='button' onclick='removeProduct(\"" + productName + "\")'>Удалить</button></li>";
+            }
+            pharmacyInfoHTML += "</ul>";
+
+            // Выводим информацию о выбранной аптеке на странице
+            pharmacyInfoDiv.innerHTML = pharmacyInfoHTML;
+        }
+
+        function addProduct() {
+            let productName = document.getElementById("productName").value;
+            let productQuantity = document.getElementById("productQuantity").value;
+            let selectedPharmacy = document.getElementById("pharmacy").value;
+
+            // Добавляем информацию о товаре в аптеку
+            // Здесь может быть логика для отправки данных на сервер или их сохранения
+            alert("Добавлен товар \"" + productName + "\" в количестве " + productQuantity + " штук в аптеку " + selectedPharmacy);
+
+            // После добавления товара обновляем информацию о выбранной аптеке
+            showPharmacyInfo();
+        }
+
+        function removeProduct(productName) {
+            let selectedPharmacy = document.getElementById("pharmacy").value;
+
+            // Удаление товара из аптеки
+            // Здесь может быть логика для удаления товара из базы данных или другого источника данных
+            alert("Товар \"" + productName + "\" удален из аптеки " + selectedPharmacy);
+
+            // После удаления товара обновляем информацию о выбранной аптеке
+            showPharmacyInfo();
+        }
+    </script>
+</body>
+</html>

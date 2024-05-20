@@ -1,0 +1,45 @@
+﻿@using Drugstore.Service;
+@using Blazorise;
+@inject NavigationManager navigation
+@rendermode InteractiveServer
+@page "/"
+@using System.Collections.ObjectModel
+
+<h1>Функции директора аптеки</h1>
+
+<Container>
+    <Row>
+        <Column ColumnSize="ColumnSize.Is4">
+            <Div Clickable="true" @onclick="GoToPharmacyInfo" Class="block">
+                <h2>Сведения об аптеке</h2>
+            </Div>
+        </Column>
+        <Column ColumnSize="ColumnSize.Is4">
+            <Div Clickable="true" @onclick="GoToProductInfo" Class="block">
+                <h2>Сведения о товарах</h2>
+            </Div>
+        </Column>
+        <Column ColumnSize="ColumnSize.Is4">
+            <Div Clickable="true" @onclick="GoToSupplierInfo" Class="block">
+                <h2>Сведения о поставщиках</h2>
+            </Div>
+        </Column>
+    </Row>
+</Container>
+
+@code {
+    private void GoToPharmacyInfo()
+    {
+        navigation.NavigateTo("Buildings");
+    }
+
+    private void GoToProductInfo()
+    {
+        navigation.NavigateTo("Products");
+    }
+
+    private void GoToSupplierInfo()
+    {
+        navigation.NavigateTo("Traders");
+    }
+}

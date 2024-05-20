@@ -1,0 +1,74 @@
+﻿@rendermode InteractiveServer
+@page "/Traders"
+@using Drugstore.Service
+@using Drugstore.Data
+@inject PharmacyService PharmacyService
+
+
+<PageTitle>Карточка поставщика</PageTitle>
+
+<Layout>
+
+    <h1>Карточка поставщика</h1>
+
+    <div>
+        <label for="supplierSelect">Выберите поставщика:</label>
+        <Select TValue="int" @bind-SelectedValue="selectedSupplierId" @onchange="OnSupplierChanged">
+            <option value="">Выберите поставщика</option>
+            @foreach (var supplier in suppliers)
+            {
+                <option value="@supplier.id">@supplier.name</option>
+            }
+        </Select>
+    </div>
+
+    @if (selectedSupplier != null)
+    {
+        <div id="supplierInfo">
+            <p><strong>Имя:</strong> @selectedSupplier.name</p>
+            <p><strong>Товары:</strong></p>
+            <ul>
+                @foreach (var product in products)
+                {
+                    <li>
+                        <p><strong>Название товара:</strong> @product.name</p>
+                        <p><strong>Фасовки:</strong></p>
+                        <ul>
+                            @foreach (var packging in product.packingSupplier)
+                            {
+                                <li>@packging.packing.packing: @packging.quantity шт.</li>
+                            }
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+
+</Layout>
+
+@code {
+
+    private List<supplier> suppliers = new List<supplier>();
+    private List<product> products = new List<product>();
+    private supplier selectedSupplier;
+    private product selectedProduct;
+    private int selectedSupplierId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        suppliers = await PharmacyService.GetSuppliersAsync();
+    }
+
+    private async Task OnSupplierChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int supplierId))
+        {
+            selectedSupplier = await PharmacyService.GetSupplierByIdAsync(supplierId);
+            if (selectedSupplier != null)
+            {
+                products = await PharmacyService.GetProductsBySupplierIdAsync(supplierId);
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+﻿@using Drugstore.Service;
+@using Drugstore.Data;
+@rendermode InteractiveServer
+@inject PharmacyService pharmacyService
+@inject NavigationManager navigation
+@page "/Buildings"
+
+
+<h1>Информация об аптеке</h1>
+
+<Select TValue="int?" @bind-Value="selectedPharmacyId" @onchange="OnPharmacySelected">
+    <option value="">Выберите аптеку</option>
+    @foreach (var pharmacy in pharmacies)
+    {
+        <option value="@pharmacy.id">@pharmacy.name</option>
+    }
+</Select>
+
+@if (selectedPharmacy != null)
+{
+    <h2>@selectedPharmacy.name</h2>
+    <p><strong>Дата:</strong> @selectedPharmacy.date</p>
+    <p><strong>Поставщики:</strong> @string.Join(", ", selectedPharmacy.PharmacySuppliers.Select(ps => ps.supplier.name))</p>
+    <p><strong>Количество товаров:</strong> @selectedPharmacy.PharmacyProducts.Count</p>
+    <ul>
+        @foreach (var pharmacyProduct in selectedPharmacy.PharmacyProducts)
+        {
+            <li>
+                <p>@pharmacyProduct.product.name</p>
+                <ul>
+                    @foreach (var packingPharma in pharmacyProduct.product.packingPharma)
+                    {
+                        <li>
+                            <p>Упаковка: @packingPharma.packing.packing, количество: @packingPharma.quantity</p>
+                        </li>
+                    }
+                </ul>
+                <Button Color="Color.Danger" Clicked="@(() => RemoveProduct(pharmacyProduct.product.id))">Удалить</Button>
+            </li>
+        }
+    </ul>
+}
+<footer>
+    <Button class="btn btn-primary fixed-bottom" Color="Color.Primary" Clicked="@NavigateToHomePage">Вернуться на главную страницу</Button>
+</footer>
+
+
+@code {
+    List<pharmacy> pharmacies = new List<pharmacy>();
+    pharmacy selectedPharmacy;
+    int? selectedPharmacyId;
+
+
+    protected override async Task OnInitializedAsync()
+
+        => pharmacies = await pharmacyService.GetPharmaciesAsync();
+
+
+    private async Task OnPharmacySelected(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int pharmacyid))
+        {
+            selectedPharmacy = await pharmacyService.GetPharmacyByIdAsync(pharmacyid);
+        }
+        else
+        {
+            selectedPharmacy = null;
+        }
+        StateHasChanged();
+    }
+
+    private async Task RemoveProduct(int productId)
+    {
+        await pharmacyService.RemoveProductAsync(productId);
+        // Обновление информации об аптеке после удаления продукта
+        if (selectedPharmacyId.HasValue)
+        {
+            selectedPharmacy = await pharmacyService.GetPharmacyByIdAsync(selectedPharmacyId.Value);
+        }
+        StateHasChanged(); // Обновление интерфейса
+    }
+
+    private void NavigateToHomePage()
+    {
+        navigation.NavigateTo("/");
+    }
+}

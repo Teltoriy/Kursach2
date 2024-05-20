@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сведения о поставщиках</title>
+</head>
+<body>
+    <h1>Сведения о поставщиках</h1>
+    <form>
+        <label for="supplier">Выберите поставщика:</label>
+        <select id="supplier" onchange="showSupplierProducts()">
+            <option value="supplier1">Поставщик 1</option>
+            <option value="supplier2">Поставщик 2</option>
+            <option value="supplier3">Поставщик 3</option>
+            <!-- Добавьте других поставщиков по мере необходимости -->
+        </select>
+    </form>
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Товар</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+            <!-- Здесь будет отображаться список товаров по выбранному поставщику -->
+        </tbody>
+    </table>
+
+    <script>
+        function showSupplierProducts() {
+            let selectedSupplier = document.getElementById("supplier").value;
+            let productList = document.getElementById("productList");
+            
+            // Очищаем список товаров перед обновлением
+            productList.innerHTML = "";
+
+            // Здесь можно добавить логику для загрузки списка товаров от выбранного поставщика из базы данных или другого источника данных
+            // Например:
+            let products = [];
+
+            // В зависимости от выбранного поставщика, загружаем соответствующий список товаров
+            switch(selectedSupplier) {
+                case "supplier1":
+                    products = [
+                        { name: "Товар 1", packagings: ["5 мг", "10 мг", "15 мг"], quantities: [5, 10, 15] },
+                        { name: "Товар 2", packagings: ["20 мг", "25 мг"], quantities: [20, 25] },
+                        { name: "Товар 3", packagings: ["30 мг", "35 мг", "40 мг"], quantities: [30, 35, 40] }
+                    ];
+                    break;
+                case "supplier2":
+                    products = [
+                        { name: "Товар 4", packagings: ["50 мг", "55 мг"], quantities: [50, 55] },
+                        { name: "Товар 5", packagings: ["60 мг", "65 мг", "70 мг"], quantities: [60, 65, 70] },
+                        { name: "Товар 6", packagings: ["75 мг", "80 мг"], quantities: [75, 80] }
+                    ];
+                    break;
+                case "supplier3":
+                    products = [
+                        { name: "Товар 7", packagings: ["85 мг", "90 мг", "95 мг"], quantities: [85, 90, 95] },
+                        { name: "Товар 8", packagings: ["100 мг", "105 мг"], quantities: [100, 105] },
+                        { name: "Товар 9", packagings: ["110 мг", "115 мг", "120 мг"], quantities: [110, 115, 120] }
+                    ];
+                    break;
+                // Добавьте другие поставщики и их товары по мере необходимости
+            }
+
+            // Отображаем список товаров в таблице
+            for(let i = 0; i < products.length; i++) {
+                let row = document.createElement("tr");
+                let cell = document.createElement("td");
+                cell.textContent = products[i].name + " доступна массовка по " + products[i].packagings.join(", ") + ", ";
+                let quantities = products[i].quantities.map((quantity, index) => "по " + products[i].packagings[index] + " доступно " + quantity).join(", ");
+                cell.textContent += quantities;
+                row.appendChild(cell);
+                productList.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
