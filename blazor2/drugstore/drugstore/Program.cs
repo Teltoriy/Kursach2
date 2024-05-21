@@ -16,7 +16,8 @@ builder.Services
 	{
 		options.Immediate = true;
 	})
-	.AddBootstrapProviders();
+	.AddBootstrapProviders()
+	.AddFontAwesomeIcons();
 builder.Services.AddDbContextFactory<DatabaseContext>();
 builder.Services.AddScoped<PharmacyService>();
 

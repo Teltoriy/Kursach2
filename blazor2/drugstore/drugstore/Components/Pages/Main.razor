@@ -4,28 +4,57 @@
 @rendermode InteractiveServer
 @page "/"
 @using System.Collections.ObjectModel
-
-<h1>Функции директора аптеки</h1>
-
+@using Microsoft.AspNetCore.Components.Web
+<link href="./customcss.css" rel="stylesheet" />
+<Row>
+    <Column ColumnSize="ColumnSize.Is12">
+        <div style="display: flex; align-items: ;">
+            <h2>Pustotrep.inc</h2>
+        </div>
+    </Column>
+</Row>
 <Container>
+    <!-- Логотип и название компании -->
+   
+
+    <!-- Текст "Выберете функцию" -->
     <Row>
-        <Column ColumnSize="ColumnSize.Is4">
-            <Div Clickable="true" @onclick="GoToPharmacyInfo" Class="block">
-                <h2>Сведения об аптеке</h2>
-            </Div>
-        </Column>
-        <Column ColumnSize="ColumnSize.Is4">
-            <Div Clickable="true" @onclick="GoToProductInfo" Class="block">
-                <h2>Сведения о товарах</h2>
-            </Div>
-        </Column>
-        <Column ColumnSize="ColumnSize.Is4">
-            <Div Clickable="true" @onclick="GoToSupplierInfo" Class="block">
-                <h2>Сведения о поставщиках</h2>
-            </Div>
+        <Column ColumnSize="ColumnSize.Is12">
+            <h2 class="text-center">Выберете функцию</h2>
         </Column>
     </Row>
+
+    <!-- Блоки с картинками и текстом -->
+    <Row>
+        <Column ColumnSize="ColumnSize.Is4">
+            <div class="block" @onclick="GoToPharmacyInfo">
+                <img src="./static/pharmacy-info.png" alt="Pharmacy Info">
+                <h3>Сведения об аптеке</h3>
+            </div>
+        </Column>
+        <Column ColumnSize="ColumnSize.Is4">
+            <div class="block" @onclick="GoToProductInfo">
+                <img src="./static/product-info.png" alt="Product Info">
+                <h3>Сведения о товарах</h3>
+            </div>
+        </Column>
+        <Column ColumnSize="ColumnSize.Is4">
+            <div class="block" @onclick="GoToSupplierInfo">
+                <img src="./static/supplier-info.png" alt="Supplier Info">
+                <h3>Сведения о поставщиках</h3>
+            </div>
+        </Column>
+    </Row>
+
+    <Field Position="Position.Absolute.Bottom.Is0.Start.Is50.Translate.MiddleX" Style="margin-bottom: 50px">
+        <Link Style="cursor: pointer">
+            <Icon Name="IconName.Headphones"></Icon> Техническая поддержка
+        </Link>
+        <Span>&copy; 2024 - Pustotrep.inc</Span>
+    </Field>
 </Container>
+
+
 
 @code {
     private void GoToPharmacyInfo()
@@ -43,3 +72,5 @@
         navigation.NavigateTo("Traders");
     }
 }
+
+

@@ -5,55 +5,61 @@
 @inject PharmacyService PharmacyService
 @inject NavigationManager navigation
 
-
+<link href="css/custom.css" rel="stylesheet" />
 <PageTitle>Карточка товара</PageTitle>
 
-<Layout>
+<Container Class="product-container">
+    <h1 class="text-center">Карточка товара</h1>
 
-    <h1>Карточка товара</h1>
-
-    <div>
-        <label for="productSelect">Выберите товар:</label>
-        <Select TValue="int" @bind-SelectedValue="selectedProductId" @onchange="OnProductChanged" id="productSelect">
-            <option value="">Выберите товар</option>
-            @foreach (var product in products)
-            {
-                <option value="@product.id">@product.name</option>
-            }
-        </Select>
-    </div>
-
-    <div>
-        <label for="supplierSelect">Выберите поставщика:</label>
-        <Select TValue="int" @bind-SelectedValue="selectedSupplierId" id="supplierSelect">
-            <option value="">Выберите поставщика</option>
-            @foreach (var supplier in suppliers)
-            {
-                <option value="@supplier.id">@supplier.name</option>
-            }
-        </Select>
-    </div>
+    <Row>
+        <Column ColumnSize="ColumnSize.Is12">
+            <label for="productSelect">Выберите товар:</label>
+            <Select TValue="int" @bind-SelectedValue="selectedProductId" @onchange="OnProductChanged" id="productSelect">
+                <option value="">Выберите товар</option>
+                @foreach (var product in products)
+                {
+                    <option value="@product.id">@product.name</option>
+                }
+            </Select>
+        </Column>
+    </Row>
 
     @if (selectedProduct != null)
     {
-        <div id="productInfo">
-            <p><strong>Название:</strong> @selectedProduct.name</p>
+        <div class="product-info">
+            <h2>@selectedProduct.name</h2>
             <p><strong>Цена:</strong> @selectedProduct.cost</p>
-            <p><strong>Количество:</strong> @selectedProduct.quantity</p>
             <p><strong>Срок годности:</strong> @selectedProduct.expirationdate</p>
             <p><strong>Массив фасовок:</strong></p>
             <ul>
                 @foreach (var packing in selectedProduct.packing)
                 {
-                    <li>@packing.packing:</li>
+                    <li>@packing.packing</li>
                 }
             </ul>
-            <p><strong>Поставщики:</strong> @string.Join(", ", selectedProduct.supplierproducts.Select(sp => sp.supplier.name))</p>
-            <button class="btn btn-primary" @onclick="PurchaseFromPreferredSupplier">Заказать у выбранного поставщика</button>
+            <label for="supplierSelect">Выберите поставщика:</label>
+            <Select TValue="int" @bind-SelectedValue="selectedSupplierId" id="supplierSelect">
+                <option value="">Выберите поставщика</option>
+                @foreach (var supplier in suppliers)
+                {
+                    <option value="@supplier.id">@supplier.name</option>
+                }
+            </Select>
+            <div class="text-center mt-3">
+                <Button Color="Color.Primary" Clicked="@PurchaseFromPreferredSupplier">Заказать у выбранного поставщика</Button>
+            </div>
         </div>
     }
 
-</Layout>
+    <Row>
+        <Column ColumnSize="ColumnSize.Is12">
+            <div class="text-center mt-4">
+                <Button Color="Color.Primary" Clicked="@NavigateToHomePage">Вернуться на главную страницу</Button>
+            </div>
+        </Column>
+    </Row>
+</Container>
+
 
 @code {
     private List<product> products = new List<product>();
@@ -76,7 +82,6 @@
             if (selectedProduct != null)
             {
                 suppliers = await PharmacyService.GetSuppliersByProductIdAsync(productId);
-                StateHasChanged();
             }
         }
     }
@@ -88,5 +93,6 @@
             navigation.NavigateTo($"/order/{selectedProductId}/{selectedSupplierId}");
         }
     }
-}
 
+    private void NavigateToHomePage() => navigation.NavigateTo("/");
+}

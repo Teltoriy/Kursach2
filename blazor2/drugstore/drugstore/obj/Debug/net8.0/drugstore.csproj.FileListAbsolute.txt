@@ -46,3 +46,4 @@ D:\Desktop\Курсач\blazor2\drugstore\drugstore\obj\Debug\net8.0\drugstore.p
 D:\Desktop\Курсач\blazor2\drugstore\drugstore\obj\Debug\net8.0\drugstore.genruntimeconfig.cache
 D:\Desktop\Курсач\blazor2\drugstore\drugstore\obj\Debug\net8.0\ref\drugstore.dll
 D:\Desktop\Курсач\blazor2\drugstore\drugstore\bin\Debug\net8.0\Blazorise.Icons.FontAwesome.dll
+D:\Desktop\Курсач\blazor2\drugstore\drugstore\obj\Debug\net8.0\drugstore.sourcelink.json

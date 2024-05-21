@@ -51,6 +51,14 @@ public class PharmacyService(DatabaseContext context)
         {
             _context.productpackingpharma.RemoveRange(productPackings);
         }
+        var productPackingSuppliers = await _context.productpackingsupplier
+        .Where(pps => pps.productid == productId)
+        .ToListAsync();
+
+        if (productPackingSuppliers != null)
+        {
+            _context.productpackingsupplier.RemoveRange(productPackingSuppliers);
+        }
         await _context.SaveChangesAsync();
     }
     public async Task<List<product>> GetProductsAsync()

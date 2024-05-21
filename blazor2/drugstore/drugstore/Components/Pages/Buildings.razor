@@ -5,56 +5,65 @@
 @inject NavigationManager navigation
 @page "/Buildings"
 
+<link href="./customcss.css" rel="stylesheet" />
+<Container>
+    <h1 class="text-center">Информация об аптеке</h1>
 
-<h1>Информация об аптеке</h1>
-
-<Select TValue="int?" @bind-Value="selectedPharmacyId" @onchange="OnPharmacySelected">
-    <option value="">Выберите аптеку</option>
-    @foreach (var pharmacy in pharmacies)
-    {
-        <option value="@pharmacy.id">@pharmacy.name</option>
-    }
-</Select>
-
-@if (selectedPharmacy != null)
-{
-    <h2>@selectedPharmacy.name</h2>
-    <p><strong>Дата:</strong> @selectedPharmacy.date</p>
-    <p><strong>Поставщики:</strong> @string.Join(", ", selectedPharmacy.PharmacySuppliers.Select(ps => ps.supplier.name))</p>
-    <p><strong>Количество товаров:</strong> @selectedPharmacy.PharmacyProducts.Count</p>
-    <ul>
-        @foreach (var pharmacyProduct in selectedPharmacy.PharmacyProducts)
+    <Select TValue="int?" @bind-Value="selectedPharmacyId" @onchange="OnPharmacySelected" Class="mb-4">
+        <option value="">Выберите аптеку</option>
+        @foreach (var pharmacy in pharmacies)
         {
-            <li>
-                <p>@pharmacyProduct.product.name</p>
-                <ul>
-                    @foreach (var packingPharma in pharmacyProduct.product.packingPharma)
-                    {
-                        <li>
-                            <p>Упаковка: @packingPharma.packing.packing, количество: @packingPharma.quantity</p>
-                        </li>
-                    }
-                </ul>
-                <Button Color="Color.Danger" Clicked="@(() => RemoveProduct(pharmacyProduct.product.id))">Удалить</Button>
-            </li>
+            <option value="@pharmacy.id">@pharmacy.name</option>
         }
-    </ul>
-}
-<footer>
-    <Button class="btn btn-primary fixed-bottom" Color="Color.Primary" Clicked="@NavigateToHomePage">Вернуться на главную страницу</Button>
-</footer>
+    </Select>
 
+    @if (selectedPharmacy != null)
+    {
+        <div class="pharmacy-info">
+            <h2 class="text-center">@selectedPharmacy.name</h2>
+            <p><strong>Дата:</strong> @selectedPharmacy.date</p>
+            <p><strong>Поставщики:</strong> @string.Join(", ", selectedPharmacy.PharmacySuppliers.Select(ps => ps.supplier.name))</p>
+            <p><strong>Количество товаров:</strong> @selectedPharmacy.PharmacyProducts.Count</p>
+
+            <div class="product-list">
+                @foreach (var pharmacyProduct in selectedPharmacy.PharmacyProducts)
+                {
+                    <div class="product-item">
+                        <p><strong>Товар:</strong> @pharmacyProduct.product.name</p>
+                        <p><strong>Срок годности:</strong>@pharmacyProduct.product.expirationdate</p>
+                        <p><strong>Массовка:</strong></p>
+                        <ul>
+                            @foreach (var packingPharma in pharmacyProduct.product.packingPharma)
+                            {
+                                <li>Упаковка: @packingPharma.packing.packing, количество: @packingPharma.quantity</li>
+                            }
+                        </ul>
+                        <p><strong>Цена:</strong> @pharmacyProduct.product.cost</p>
+                        <Button Color="Color.Danger" Clicked="@(() => RemoveProduct(pharmacyProduct.product.id))">Удалить</Button>
+                    </div>
+                }
+            </div>
+
+            <p class="total-cost text-center">
+                <strong>Итоговая стоимость товаров:</strong>
+                <span class="total-amount">@CalculateTotalCost()</span>
+            </p>
+        </div>
+    }
+
+    <footer class="text-center mt-5">
+        <Button Color="Color.Primary" Clicked="@NavigateToHomePage">Вернуться на главную страницу</Button>
+        <p class="support"><Icon Name="IconName.Headphones"></Icon> Техническая поддержка</p>
+        <p>&copy; 2024 - Pustotrep.inc</p>
+    </footer>
+</Container>
 
 @code {
     List<pharmacy> pharmacies = new List<pharmacy>();
     pharmacy selectedPharmacy;
     int? selectedPharmacyId;
 
-
-    protected override async Task OnInitializedAsync()
-
-        => pharmacies = await pharmacyService.GetPharmaciesAsync();
-
+    protected override async Task OnInitializedAsync() => pharmacies = await pharmacyService.GetPharmaciesAsync();
 
     private async Task OnPharmacySelected(ChangeEventArgs e)
     {
@@ -66,22 +75,29 @@
         {
             selectedPharmacy = null;
         }
-        StateHasChanged();
     }
 
     private async Task RemoveProduct(int productId)
     {
         await pharmacyService.RemoveProductAsync(productId);
-        // Обновление информации об аптеке после удаления продукта
         if (selectedPharmacyId.HasValue)
         {
             selectedPharmacy = await pharmacyService.GetPharmacyByIdAsync(selectedPharmacyId.Value);
         }
-        StateHasChanged(); // Обновление интерфейса
     }
 
-    private void NavigateToHomePage()
+    private void NavigateToHomePage() => navigation.NavigateTo("/");
+
+    private decimal CalculateTotalCost()
     {
-        navigation.NavigateTo("/");
+        decimal totalCost = 0;
+        foreach (var pharmacyProduct in selectedPharmacy.PharmacyProducts)
+        {
+            foreach (var packingPharma in pharmacyProduct.product.packingPharma)
+            {
+                totalCost += pharmacyProduct.product.cost * packingPharma.quantity;
+            }
+        }
+        return totalCost;
     }
 }

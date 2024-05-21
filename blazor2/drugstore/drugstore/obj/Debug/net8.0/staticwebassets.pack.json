@@ -9,6 +9,26 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
+      "Id": "D:\\Desktop\\Курсач\\blazor2\\drugstore\\drugstore\\wwwroot\\customcss.css",
+      "PackagePath": "staticwebassets\\customcss.css"
+    },
+    {
+      "Id": "D:\\Desktop\\Курсач\\blazor2\\drugstore\\drugstore\\wwwroot\\static\\company-logo.png",
+      "PackagePath": "staticwebassets\\static\\company-logo.png"
+    },
+    {
+      "Id": "D:\\Desktop\\Курсач\\blazor2\\drugstore\\drugstore\\wwwroot\\static\\pharmacy-info.png",
+      "PackagePath": "staticwebassets\\static\\pharmacy-info.png"
+    },
+    {
+      "Id": "D:\\Desktop\\Курсач\\blazor2\\drugstore\\drugstore\\wwwroot\\static\\product-info.png",
+      "PackagePath": "staticwebassets\\static\\product-info.png"
+    },
+    {
+      "Id": "D:\\Desktop\\Курсач\\blazor2\\drugstore\\drugstore\\wwwroot\\static\\supplier-info.png",
+      "PackagePath": "staticwebassets\\static\\supplier-info.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.drugstore.props",
       "PackagePath": "build\\drugstore.props"
     },

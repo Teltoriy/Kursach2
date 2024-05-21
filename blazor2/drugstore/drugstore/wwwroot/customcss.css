@@ -1,0 +1,189 @@
+﻿/* Общие стили */
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+button, select {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    button, select {
+        font-size: 1rem;
+    }
+
+    h1, h2, p {
+        text-align: center;
+    }
+}
+
+/* Стили для блоков */
+.block {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .block img {
+        width: 150px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .block h3 {
+        margin-top: 20px;
+    }
+
+@media (max-width: 768px) {
+    .block {
+        height: auto;
+        padding: 10px;
+    }
+
+        .block img {
+            width: 100px;
+        }
+}
+
+@media (max-width: 576px) {
+    .block {
+        height: auto;
+        padding: 10px;
+    }
+
+        .block img {
+            width: 80px;
+        }
+}
+
+/* Стили для карточки товаров */
+.product-item, .product-card, .product-info {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.product-card {
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .product-card, .product-info {
+        padding: 10px;
+    }
+}
+
+/* Стили для контейнеров */
+.supplier-container, .product-container, .pharmacy-info {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .supplier-container, .product-container, .pharmacy-info {
+        padding: 10px;
+    }
+}
+
+/* Специфические стили */
+.product-list {
+    margin-top: 20px;
+}
+
+.total-cost {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.total-amount {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.support {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .total-cost {
+        margin-top: 10px;
+    }
+
+    .total-amount {
+        font-size: 1.5rem;
+    }
+
+    .support {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+
+.footer, .company-info {
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .footer, .company-info {
+        margin-top: 20px;
+    }
+}
+html,
+body {
+    overflow-x: hidden; 
+}
+.order-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.order-details {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+    .order-details {
+        padding: 0 15px;
+    }
+}
