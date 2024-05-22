@@ -55,10 +55,6 @@ public class PharmacyService(DatabaseContext context)
         .Where(pps => pps.productid == productId)
         .ToListAsync();
 
-        if (productPackingSuppliers != null)
-        {
-            _context.productpackingsupplier.RemoveRange(productPackingSuppliers);
-        }
         await _context.SaveChangesAsync();
     }
     public async Task<List<product>> GetProductsAsync()

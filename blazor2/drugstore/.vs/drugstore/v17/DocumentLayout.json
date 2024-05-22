@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\components\\pages\\order.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\components\\pages\\order.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\components\\pages\\main.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\components\\pages\\main.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,24 +31,8 @@
       "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\components\\pages\\products.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\components\\pages\\order.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\components\\pages\\order.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\components\\pages\\traders.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\components\\pages\\traders.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\components\\pages\\main.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\components\\pages\\main.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|solutionrelative:drugstore\\data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE64773B-A55E-4E9B-A91A-5A6ED9AF6361}|drugstore\\drugstore.csproj|d:\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\wwwroot\\customcss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -85,7 +89,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Main.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Pages\\Main.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Pages\\Main.razor",
@@ -98,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Buildings.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Pages\\Buildings.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Pages\\Buildings.razor",
@@ -106,12 +110,11 @@
               "RelativeToolTip": "drugstore\\Components\\Pages\\Buildings.razor",
               "ViewState": "AQIAADYAAAAAAAAAAAAAAEIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-14T16:56:00.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T16:56:00.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "customcss.css",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\wwwroot\\customcss.css",
               "RelativeDocumentMoniker": "drugstore\\wwwroot\\customcss.css",
@@ -119,12 +122,11 @@
               "RelativeToolTip": "drugstore\\wwwroot\\customcss.css",
               "ViewState": "AQIAAI0AAAAAAAAAAAAAALwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-21T15:31:20.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T15:31:20.87Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Products.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Pages\\Products.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Pages\\Products.razor",
@@ -132,12 +134,11 @@
               "RelativeToolTip": "drugstore\\Components\\Pages\\Products.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-18T14:47:28.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-18T14:47:28.559Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Traders.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Pages\\Traders.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Pages\\Traders.razor",
@@ -145,31 +146,29 @@
               "RelativeToolTip": "drugstore\\Components\\Pages\\Traders.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-18T15:20:21.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-18T15:20:21.854Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "DatabaseContext.cs",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Data\\DatabaseContext.cs",
               "RelativeDocumentMoniker": "drugstore\\Data\\DatabaseContext.cs",
               "ToolTip": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Data\\DatabaseContext.cs",
               "RelativeToolTip": "drugstore\\Data\\DatabaseContext.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAYwHcAAAABAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAuwBgAAABzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T16:36:59.532Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T16:36:59.532Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Order.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Pages\\Order.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Pages\\Order.razor",
               "ToolTip": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Pages\\Order.razor",
               "RelativeToolTip": "drugstore\\Components\\Pages\\Order.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAdAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAewCIAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-19T15:46:46.052Z",
               "EditorCaption": ""
@@ -177,6 +176,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Service\\Service.cs",
+              "RelativeDocumentMoniker": "drugstore\\Service\\Service.cs",
+              "ToolTip": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Service\\Service.cs",
+              "RelativeToolTip": "drugstore\\Service\\Service.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T16:43:46.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "drugstore\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Properties\\launchSettings.json",
+              "RelativeToolTip": "drugstore\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-22T13:19:48.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Program.cs",
               "RelativeDocumentMoniker": "drugstore\\Program.cs",
@@ -184,25 +209,11 @@
               "RelativeToolTip": "drugstore\\Program.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAA4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:03:54.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T17:03:54.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Service.cs",
-              "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Service\\Service.cs",
-              "RelativeDocumentMoniker": "drugstore\\Service\\Service.cs",
-              "ToolTip": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Service\\Service.cs",
-              "RelativeToolTip": "drugstore\\Service\\Service.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T16:43:46.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "App.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\App.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\App.razor",
@@ -210,12 +221,11 @@
               "RelativeToolTip": "drugstore\\Components\\App.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-14T17:02:56.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T17:02:56.83Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "_Imports.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\_Imports.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\_Imports.razor",
@@ -223,12 +233,11 @@
               "RelativeToolTip": "drugstore\\Components\\_Imports.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T15:16:40.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T15:16:40.879Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "app.css",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\wwwroot\\app.css",
               "RelativeDocumentMoniker": "drugstore\\wwwroot\\app.css",
@@ -236,12 +245,11 @@
               "RelativeToolTip": "drugstore\\wwwroot\\app.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-21T15:26:39.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T15:26:39.424Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\appsettings.json",
               "RelativeDocumentMoniker": "drugstore\\appsettings.json",
@@ -249,12 +257,11 @@
               "RelativeToolTip": "drugstore\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-21T14:02:41.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T14:02:41.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Error.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Pages\\Error.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Pages\\Error.razor",
@@ -262,12 +269,11 @@
               "RelativeToolTip": "drugstore\\Components\\Pages\\Error.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T15:17:29.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T15:17:29.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\appsettings.Development.json",
               "RelativeDocumentMoniker": "drugstore\\appsettings.Development.json",
@@ -275,12 +281,11 @@
               "RelativeToolTip": "drugstore\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-19T15:16:53.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T15:16:53.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "D:\\visual\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\visual\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -288,12 +293,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\visual\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AQIAAOUSAAAAAAAAAAAMwLUSAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-05-20T18:38:15.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T18:38:15.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Routes.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Routes.razor",
@@ -301,12 +305,11 @@
               "RelativeToolTip": "drugstore\\Components\\Routes.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T15:16:36.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T15:16:36.332Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "D:\\Desktop\\\u041A\u0443\u0440\u0441\u0430\u0447\\blazor2\\drugstore\\drugstore\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "drugstore\\Components\\Layout\\MainLayout.razor",
@@ -314,8 +317,7 @@
               "RelativeToolTip": "drugstore\\Components\\Layout\\MainLayout.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-14T17:02:40.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T17:02:40.273Z"
             }
           ]
         }
